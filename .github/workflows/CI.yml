@@ -1,29 +1,21 @@
-name: Build
+name: CMake
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+ push:
+  branches: [master]
+ pull_request:
+  branches: [master]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+jobs: 
+ build_Linux:
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+  runs-on: ubuntu-latest
 
-    - name: Set up CMake
-      run: sudo apt-get install -y cmake
+  steps:
+  - uses: actions/checkout@v3
 
-    - name: Build
-      run: |
-        cmake -S . -B build
-        cmake --build build --config Release
+  - name: Configure Solver
+    run: cmake ${{github.workspace}} -B ${{github.workspace}}/build
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: executable
-        path: build/GumballMachine
+  - name: Build Solver
+    run: cmake --build ${{github.workspace}}/build
