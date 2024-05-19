@@ -1,0 +1,3 @@
+/home/misha/dev/DesignPatternsCPP/Catalog/State/real1/code/build/CMakeFiles/GumballMachine.dir
+/home/misha/dev/DesignPatternsCPP/Catalog/State/real1/code/build/CMakeFiles/edit_cache.dir
+/home/misha/dev/DesignPatternsCPP/Catalog/State/real1/code/build/CMakeFiles/rebuild_cache.dir
